@@ -20,7 +20,8 @@ const TYPES = {
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
   '.webp': 'image/webp',
-  '.woff2': 'font/woff2'
+  '.woff2': 'font/woff2',
+  '.pdf': 'application/pdf'
 };
 
 const server = http.createServer((req, res) => {

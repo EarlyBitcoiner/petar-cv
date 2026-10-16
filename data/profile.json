@@ -6,7 +6,7 @@
   "status": "Open to opportunities",
   "ctas": [
     { "label": "Get in touch", "href": "#contact", "style": "primary" },
-    { "label": "Download CV", "href": "#", "style": "ghost", "download": true }
+    { "label": "Download CV", "href": "assets/CV%20PetarDanadzhiev2026v2.pdf", "style": "ghost", "download": true }
   ],
   "socials": [
     { "network": "github", "href": "https://github.com/EarlyBitcoiner" },
