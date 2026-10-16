@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Salesforce Developer - SoftServe",
+    "meta": "Jun 2025 — Oct 2026",
+    "org": "Softserve · (Remote)",
+    "date": "Jun 2025 — Oct 2026",
+    "summary": "In SoftServe I was working in a project for a payment provider based in England, there I contribute to improving/customizing the quoting process for the company's clients where I leverage my knowledge in LWC, Salesforce CPQ, Apex, Flows and OmniScripts to create better UI experience and automations.\n\n Some of my time in SoftServe I was in a standby period awaiting client allocation. Instead of remaining passive, I proactively utilized the time to bridge the gap between Salesforce and core soware engineering. I focused on Design Patterns, OAuth, and deep understanding of Java/OOP principles to ensure I can build architecturally sound solutions, regardless of the platform.\n\n Reference to my Team Lead in SoftServe - Roman Slobodian: https://www.linkedin.com/in/rslob/ , +380 68 21 06 655 , rslob@softserveinc.com",
+    "bullets": [
+      "Learned OOP design patterns.",
+      "Customized Salesforce CPQ quoting process for clients leveraginf LWC, Apex, Flows and OmniScripts.",
+      "Was part of a 30+ team of Salesforce developers and engineers, collaborating and sharing knowledge."
+    ],
+    "tags": ["Salesforce", "CPQ", "Copado", "Apex", "JavaScript/LWC", "OmniScripts", "Flows", "Design Patterns", "VisualForce"]
+  },
+  {
+    "title": "Salesforce Developer - Next Consult",
+    "meta": "Jun 2023 — Jun 2025",
+    "org": "Next Consult · (Remote)",
+    "date": "Jun 2023 — Jun 2025",
+    "summary": "Engineered responsive and efficient user interfaces using Lightning Web Components (LWC) and Aura tailored to the customer needs.\n\n Developed scalable Apex solutions, including triggers, batch classes, and schedulable jobs, to automate complex data processing. \n\nDeveloped and maintained REST and SOAP integrations between Salesforce and external systems, ensuring seamless data synchronization and integrity. \n\nExposed Apex classes as secure web services, enabling real time data access for external applications.\n\n Built and enhanced legacy Visualforce pages (mainly ones generating PDF files) with custom Apex controllers to support critical business functions dependent on PDF files like contracts.",
+    "bullets": [
+      "Built Salesforce SOAP Integration with Experian Bank Services provider.",
+      "Built Salesforce REST Integration with Romanian Government ANAF system for uploading client Invoices.",
+      "Built Node JS server on Heroku to be used as Custom Activity in Salesforce Marketing Cloud.",
+      "Built countless Apex classes, triggers, flows, LWCs and sObjects."
+    ],
+    "tags": ["SOAP", "REST", "Salesforce", "Apex", "LWC", "Aura", "VisualForce", "Flows", "CPQ", "Heroku", "Node.js"]
+  },
+  {
+    "title": "Construction Worker - Sportjanne LTD.",
+    "meta": "May 2022 — Jun 2022",
+    "org": "Sportjanne LTD. · (On-site) Germany",
+    "date": "May 2022 — Jun 2022",
+    "summary": "https://sportjanne.com/\n\n My job was building warehouses for Karcher with focus on:",
+    "bullets": [
+      "Assembling little parts of the warehouse on the ground.",
+      "Transporting work equipment.",
+      "Supervising other workers."
+    ],
+    "tags": ["My Own Hands", "Physical Labor", "10 Hours Shifts", "Construction"]
+  }
+]

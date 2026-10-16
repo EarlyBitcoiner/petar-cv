@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Petar Danadzhiev — personal CV & portfolio. Software engineer." />
+  <title>Petar Danadzhiev · CV</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<!--
+  ============================================================================
+  HOW TO EDIT THIS SITE
+  ----------------------------------------------------------------------------
+  You almost never edit this file. All the content lives in the  data/  folder
+  as JSON, and script.js reads it on page load and builds the sections.
+
+    data/profile.json .......... your name, role, tagline, CTAs, social links
+    data/personal.json ......... the About / Details / Interests tabs
+    data/experience.json ....... one object per job
+    data/education.json ........ one object per school
+    data/courses.json .......... one object per course (same shape as experience)
+    data/skills.json ........... skill categories (meters or chips)
+    data/projects.json ......... one object per project
+    data/contact.json .......... contact details
+
+  To add an entry: copy an existing object in the matching file, edit its
+  fields, done. See README.md for the full schema and how to run the site.
+
+  IMPORTANT: open the site via a local server (double-click serve.bat, or run
+  `python -m http.server 8000`) and visit http://localhost:8000 — opening this
+  file directly will not load the data (browser security).
+  ============================================================================
+-->
+
+<body>
+  <a class="skip-link" href="#home">Skip to content</a>
+
+  <!-- Animated background layers (decorative, non-interactive) -->
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb--1"></span>
+    <span class="orb orb--2"></span>
+    <span class="orb orb--3"></span>
+  </div>
+  <canvas id="particles" class="bg-particles" aria-hidden="true"></canvas>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a class="brand" href="#home" aria-label="Back to top">
+        <span class="brand__mark">P</span>
+        <span class="brand__name">Petar<span class="brand__dot">.</span></span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#home" class="nav__link is-active">Home</a>
+        <a href="#experience" class="nav__link">Experience</a>
+        <a href="#education" class="nav__link">Education And Qualifications</a>
+        <a href="#courses" class="nav__link">Courses</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Shown only if the JSON data fails to load (e.g. opened without a server) -->
+    <div class="load-error" id="loadError" role="alert" hidden>
+      <strong>Couldn't load the site data.</strong>
+      Run a local server and open <code>http://localhost:8000</code> — double-click
+      <code>serve.bat</code> or run <code>python -m http.server 8000</code> in this folder (see <code>README.md</code>).
+    </div>
+
+    <!-- ===================== HERO / PERSONAL INFO ===================== -->
+    <section class="section hero" id="home">
+      <div class="hero__intro">
+        <div class="hero__avatar">
+          <img src="assets/ME_onBoat.jpg" alt="Portrait of Petar Danadzhiev" width="140" height="140" />
+          <span class="hero__status" title="Open to opportunities"></span>
+        </div>
+
+        <p class="eyebrow">Hello, I'm</p>
+        <h1 class="hero__name" id="heroName">Petar Danadzhiev</h1>
+        <p class="hero__role" id="heroRole"></p>
+        <p class="hero__tagline" id="heroTagline"></p>
+
+        <div class="hero__cta" id="heroCta"></div>
+        <ul class="social" id="heroSocial" aria-label="Social links"></ul>
+      </div>
+
+      <!-- Personal-info tabbed card (filled from data/personal.json) -->
+      <div class="card glass">
+        <div class="tabs" data-tabs data-section="personal">
+          <div class="tablist" role="tablist" aria-label="Personal information"></div>
+          <div class="tabpanels"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="section" id="experience">
+      <header class="section__head">
+        <p class="eyebrow">Career</p>
+        <h2 class="section__title">Experience</h2>
+        <p class="section__sub">Each role is a tab — click through the timeline.</p>
+      </header>
+      <div class="card glass">
+        <div class="tabs" data-tabs data-section="experience">
+          <div class="tablist" role="tablist" aria-label="Work experience"></div>
+          <div class="tabpanels"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EDUCATION ===================== -->
+    <section class="section" id="education">
+      <header class="section__head">
+        <p class="eyebrow">Learning</p>
+        <h2 class="section__title">Education and Qualifications</h2>
+        <p class="section__sub">Every step of my education as its own tab.</p>
+      </header>
+      <div class="card glass">
+        <div class="tabs" data-tabs data-section="education">
+          <div class="tablist" role="tablist" aria-label="Education history"></div>
+          <div class="tabpanels"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COURSES ===================== -->
+    <section class="section" id="courses">
+      <header class="section__head">
+        <p class="eyebrow">Continuous learning</p>
+        <h2 class="section__title">Courses</h2>
+        <p class="section__sub">Courses and trainings — one tab each.</p>
+      </header>
+      <div class="card glass">
+        <div class="tabs" data-tabs data-section="courses">
+          <div class="tablist" role="tablist" aria-label="Courses"></div>
+          <div class="tabpanels"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section" id="skills">
+      <header class="section__head">
+        <p class="eyebrow">Toolbox</p>
+        <h2 class="section__title">Skills</h2>
+        <p class="section__sub">Grouped by category — one tab each.</p>
+      </header>
+      <div class="card glass">
+        <div class="tabs" data-tabs data-section="skills">
+          <div class="tablist" role="tablist" aria-label="Skills by category"></div>
+          <div class="tabpanels"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects">
+      <header class="section__head">
+        <p class="eyebrow">Selected work</p>
+        <h2 class="section__title">Projects</h2>
+        <p class="section__sub">A tab per project — the highlights.</p>
+      </header>
+      <div class="card glass">
+        <div class="tabs" data-tabs data-section="projects">
+          <div class="tablist" role="tablist" aria-label="Projects"></div>
+          <div class="tabpanels"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section" id="contact">
+      <header class="section__head">
+        <p class="eyebrow">Say hello</p>
+        <h2 class="section__title">Contact</h2>
+        <p class="section__sub">The fastest ways to reach me.</p>
+      </header>
+
+      <div class="contact__grid">
+        <div class="card glass">
+          <ul class="contact__list" id="contactList"></ul>
+          <ul class="social social--lg" id="contactSocial" aria-label="Social links"></ul>
+        </div>
+
+        <!-- Simple mailto-powered form (no backend needed) -->
+        <form class="card glass contact__form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="cf-name">Name</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+          </div>
+          <div class="field">
+            <label for="cf-msg">Message</label>
+            <textarea id="cf-msg" name="message" rows="4" required placeholder="Hi Petar, …"></textarea>
+          </div>
+          <button class="btn btn--primary" type="submit">Send message</button>
+          <p class="form__note" id="formNote" role="status" aria-live="polite">Opens your email app — no data leaves your device.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Petar Danadzhiev · Built with care &amp; a lot of orange. Claude Code is the GOAT</p>
+    <a href="#top" class="footer__up">Back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

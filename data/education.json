@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Salesforce Platform Developer II",
+    "meta": "Salesforce Certified - Aug 2026",
+    "org": "",
+    "date": "Aug 2026",
+    "summary": "Trailblazer Account - https://www.salesforce.com/trailblazer/h5vr0rx2pownuyerif",
+    "tags": ["Certification","Qualification"]
+  },
+  {
+    "title": "Salesforce Platform Developer I",
+    "meta": "Salesforce Certified - Feb 2025",
+    "org": "",
+    "date": "Feb 2025",
+    "summary": "Trailblazer Account - https://www.salesforce.com/trailblazer/h5vr0rx2pownuyerif",
+    "tags": ["Certification","Qualification"]
+  },
+  {
+    "title": "Bachelor Informatics",
+    "meta": "Sept 2022 — Present",
+    "org": "Veliko Tarnovo university \"St. st. Cyril and Methodius\", Veliko Tarnovo",
+    "date": "Sept 2022 — Present",
+    "summary": "",
+    "tags": ["Informatics", "University"]
+  },
+  {
+    "title": "Software courses",
+    "meta": "Jan 2022 — Dec 2024",
+    "org": "Software University, Sofia",
+    "date": "Jan 2022 — Dec 2024",
+    "summary": "I went through courses learning programming with C++, JavaScript and Database management and creation with MySQL",
+    "tags": ["C++", "JavaScript", "MySQL"]
+  },
+  {
+    "title": "Secondary Education",
+    "meta": "Sept 2016 - Jul 2021",
+    "org": "SE \"Saint Kliment Ohridski\" Troyan",
+    "date": "Sept 2016 - Jul 2021",
+    "summary": "I graduated with qualification \"English and Mathematics\"",
+    "tags": ["Childhood", "Home Town", "Secondary Education"]
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Aurora Dashboard",
+    "subtitle": "Real-time analytics for product teams",
+    "summary": "A customizable dashboard that streams live metrics with sub-second updates and a drag-and-drop widget system.",
+    "tags": ["React", "WebSockets", "D3"],
+    "links": [
+      { "label": "Live demo", "href": "#" },
+      { "label": "Source", "href": "#" }
+    ]
+  },
+  {
+    "title": "PocketLedger",
+    "subtitle": "Privacy-first personal finance app",
+    "summary": "An offline-first budgeting app with local encryption and clean data-viz. Over 2k installs in its first month.",
+    "tags": ["React Native", "SQLite", "Charts"],
+    "links": [
+      { "label": "Live demo", "href": "#" },
+      { "label": "Source", "href": "#" }
+    ]
+  },
+  {
+    "title": "Trailmark",
+    "subtitle": "Community trail-mapping platform",
+    "summary": "Crowd-sourced hiking routes with GPX import, elevation profiles and offline maps for the backcountry.",
+    "tags": ["Next.js", "Mapbox", "PostGIS"],
+    "links": [
+      { "label": "Live demo", "href": "#" },
+      { "label": "Source", "href": "#" }
+    ]
+  }
+]

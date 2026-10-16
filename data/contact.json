@@ -1,0 +1,8 @@
+{
+  "email": "petar.danadzhiev.bg@gmail.com",
+  "details": [
+    { "icon": "✉", "value": "petar.danadzhiev.bg@gmail.com", "href": "mailto:petar.danadzhiev.bg@gmail.com" },
+    { "icon": "☎", "value": "+359 878 559 407", "href": "tel:+359878559407" },
+    { "icon": "⚲", "value": "Bulgaria" }
+  ]
+}

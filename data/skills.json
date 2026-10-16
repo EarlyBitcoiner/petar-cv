@@ -1,0 +1,26 @@
+[
+    {
+    "label": "Spoken Languages",
+    "type": "meters",
+    "items": [
+      { "name": "Bulgarian", "level": 100 },
+      { "name": "English", "level": 75 }
+    ]
+  },
+  {
+    "label": "Programming Languages",
+    "type": "meters",
+    "items": [
+        { "name": "Apex", "level": 95 },
+      { "name": "JavaScript", "level": 80 },
+      { "name": "C++", "level": 70 },
+      { "name": "HTML & CSS", "level": 70 },
+      { "name": "Java", "level": 60 }
+    ]
+  },
+  {
+    "label": "Tools & Cloud",
+    "type": "chips",
+    "items": ["Git", "Copado Code", "Claude", "Gemini", "VSCode", "IntelliJ Webstorm", "Salesforce CLI", "Jira", "Teams", "Slack", "MS Word"]
+  }
+]

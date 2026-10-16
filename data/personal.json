@@ -1,0 +1,28 @@
+[
+  {
+    "label": "About",
+    "type": "text",
+    "heading": "A little about me",
+    "body": "Software Developer with 3+ years of experience building scalable solutions. Skilled in Object-Oriented Programming (Java, C++, Apex), Modern JavaScript (ES6+, Web Components), and complex REST/SOAP API integrations. Experienced in full SDLC, design patterns, and automating business processes. Committed to writing efficient, clean code and continuously expanding my stack with technologies like Node.js"
+  },
+  {
+    "label": "Details",
+    "type": "facts",
+    "items": [
+      { "label": "Name", "value": "Petar Stanislavov Danadzhiev" },
+      { "label": "Location", "value": "Bulgaria" },
+      { "label": "Phone Number", "value": "+359 878 559 407" },
+      { "label": "Date of Birth", "value": "27/11/2002" },
+      { "label": "Driving License", "value": "Yes - B2" },
+      { "label": "IT Work Experience", "value": "3.5 Years" },
+      { "label": "Email", "value": "petar.danadzhiev.bg@gmail.com" },
+      { "label": "Availability", "value": "Open to new opportunities" },
+      { "label": "Focus", "value": "Mainly Salesforce but open to other technologies" }
+    ]
+  },
+  {
+    "label": "Interests",
+    "type": "chips",
+    "items": ["Programming", "Gym/Fitness", "Basketball", "Investing", "Cars"]
+  }
+]

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-label="Petar monogram">
+  <!-- EDIT: replace this file with your own photo (any square image works) -->
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e85d04"/>
+      <stop offset="0.52" stop-color="#ff8c1a"/>
+      <stop offset="1" stop-color="#ffb703"/>
+    </linearGradient>
+    <radialGradient id="bg" cx="0.5" cy="0.34" r="0.85">
+      <stop offset="0" stop-color="#2b1a0d"/>
+      <stop offset="1" stop-color="#130b05"/>
+    </radialGradient>
+  </defs>
+  <circle cx="80" cy="80" r="78" fill="url(#bg)"/>
+  <circle cx="80" cy="80" r="78" fill="none" stroke="url(#grad)" stroke-width="3"/>
+  <text x="81" y="86" text-anchor="middle" dominant-baseline="central"
+        font-family="'Space Grotesk', 'Segoe UI', Arial, sans-serif" font-size="94" font-weight="700"
+        fill="url(#grad)">P</text>
+</svg>
