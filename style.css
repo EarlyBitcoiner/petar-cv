@@ -102,51 +102,25 @@ ul { list-style: none; padding: 0; }
 }
 
 /* ============================================================================
-   Animated background: gradient-glow orbs + particle canvas + faint grid
+   Static background: topographic contour lines (no motion, no AI-telltale orbs)
    ============================================================================ */
-.bg-orbs, .bg-particles, .bg-grid {
+.bg-topo {
   position: fixed;
   inset: 0;
-  pointer-events: none;
-}
-.bg-orbs      { z-index: -3; overflow: hidden; }
-.bg-particles { z-index: -2; }
-.bg-grid {
   z-index: -1;
-  opacity: 0.4;
-  background-image:
-    linear-gradient(rgba(255, 140, 40, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 140, 40, 0.05) 1px, transparent 1px);
-  background-size: 64px 64px;
-  -webkit-mask-image: radial-gradient(ellipse at 50% 0%, #000 10%, transparent 72%);
-          mask-image: radial-gradient(ellipse at 50% 0%, #000 10%, transparent 72%);
+  pointer-events: none;
+  opacity: 0.22;
+  -webkit-mask-image: radial-gradient(135% 110% at 50% 0%, #000 38%, transparent 82%);
+          mask-image: radial-gradient(135% 110% at 50% 0%, #000 38%, transparent 82%);
 }
-
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(56px);
-  opacity: 0.5;
-  will-change: transform;
+.bg-topo svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.2;
 }
-.orb--1 {
-  width: 46vw; height: 46vw; left: -8vw; top: -12vh;
-  background: radial-gradient(circle, #ff6a00, transparent 65%);
-  animation: drift1 24s ease-in-out infinite;
-}
-.orb--2 {
-  width: 40vw; height: 40vw; right: -8vw; top: 14vh;
-  background: radial-gradient(circle, #e85d04, transparent 64%);
-  animation: drift2 30s ease-in-out infinite;
-}
-.orb--3 {
-  width: 42vw; height: 42vw; left: 24vw; bottom: -16vh;
-  background: radial-gradient(circle, #ffb703, transparent 68%);
-  animation: drift3 27s ease-in-out infinite;
-}
-@keyframes drift1 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(8vw, 6vh) scale(1.12); } }
-@keyframes drift2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-7vw, 8vh) scale(1.08); } }
-@keyframes drift3 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(5vw, -7vh) scale(1.15); } }
 
 /* ============================================================================
    Navigation
@@ -570,7 +544,6 @@ ul { list-style: none; padding: 0; }
    ============================================================================ */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .orb { animation: none; }
   .tabpanel { animation: none; }
   .meter i { transition: none; }
   .card { transition: none; }

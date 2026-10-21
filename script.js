@@ -7,8 +7,6 @@
 (function () {
   'use strict';
 
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   /* ======================================================================
      Small helpers
      ====================================================================== */
@@ -319,95 +317,6 @@
   }
 
   /* ======================================================================
-     Floating particle "constellation" canvas (data-independent)
-     ====================================================================== */
-  function startParticles() {
-    var canvas = document.getElementById('particles');
-    if (!canvas || reduceMotion) return;
-    var ctx = canvas.getContext('2d');
-    var w, h, dpr, pts, raf, running = false;
-
-    function build() {
-      // Cap DPR at 1.5: a full-screen canvas at 2x is ~4x the fill-rate for a
-      // faint decorative layer nobody inspects pixel-for-pixel.
-      dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-      w = canvas.width = Math.floor(window.innerWidth * dpr);
-      h = canvas.height = Math.floor(window.innerHeight * dpr);
-      canvas.style.width = window.innerWidth + 'px';
-      canvas.style.height = window.innerHeight + 'px';
-      var count = Math.min(60, Math.floor(window.innerWidth * window.innerHeight / 24000));
-      pts = [];
-      for (var i = 0; i < count; i++) {
-        pts.push({
-          x: Math.random() * w, y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.28 * dpr,
-          vy: (Math.random() - 0.5) * 0.28 * dpr,
-          r: (Math.random() * 1.6 + 0.6) * dpr
-        });
-      }
-    }
-
-    function step() {
-      running = true;
-      ctx.clearRect(0, 0, w, h);
-      var link = 110 * dpr, link2 = link * link;
-      var i, j, p, q, dx, dy;
-
-      // Advance all points first (cheap, no drawing).
-      for (i = 0; i < pts.length; i++) {
-        p = pts[i];
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0) p.x += w; else if (p.x > w) p.x -= w;
-        if (p.y < 0) p.y += h; else if (p.y > h) p.y -= h;
-      }
-
-      // All connecting lines in ONE path + ONE stroke (was one stroke() per
-      // pair — thousands of draw calls per frame). Uniform alpha instead of a
-      // per-distance fade; the difference is imperceptible for this effect.
-      ctx.strokeStyle = 'rgba(255, 120, 30, 0.14)';
-      ctx.lineWidth = dpr * 0.6;
-      ctx.beginPath();
-      for (i = 0; i < pts.length; i++) {
-        p = pts[i];
-        for (j = i + 1; j < pts.length; j++) {
-          q = pts[j];
-          dx = p.x - q.x; dy = p.y - q.y;
-          if (dx * dx + dy * dy < link2) {
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(q.x, q.y);
-          }
-        }
-      }
-      ctx.stroke();
-
-      // All dots in ONE path + ONE fill.
-      ctx.fillStyle = 'rgba(255, 150, 60, 0.7)';
-      ctx.beginPath();
-      for (i = 0; i < pts.length; i++) {
-        p = pts[i];
-        ctx.moveTo(p.x + p.r, p.y);
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      }
-      ctx.fill();
-
-      raf = requestAnimationFrame(step);
-    }
-
-    build();
-    step();
-
-    var rt;
-    window.addEventListener('resize', function () {
-      clearTimeout(rt);
-      rt = setTimeout(build, 200);
-    });
-    document.addEventListener('visibilitychange', function () {
-      if (document.hidden) { cancelAnimationFrame(raf); running = false; }
-      else if (!running) { step(); }
-    });
-  }
-
-  /* ======================================================================
      Navigation — mobile toggle + active-link highlight on scroll
      ====================================================================== */
   function initNav() {
@@ -476,7 +385,6 @@
 
   function boot() {
     // Pieces that don't depend on the JSON — start them right away.
-    startParticles();
     initNav();
     setYear();
 
