@@ -21,6 +21,6 @@
   {
     "label": "Tools & Cloud",
     "type": "chips",
-    "items": ["Git", "Copado Code", "Claude", "Gemini", "VSCode", "IntelliJ Webstorm", "Salesforce CLI", "Jira", "Teams", "Slack", "MS Word"]
+    "items": ["Git", "GitHub", "Copado", "Claude Code", "Gemini", "VSCode", "IntelliJ Webstorm", "Salesforce CLI", "Sales Cloud", "Service Cloud", "Revenue Cloud/CPQ package", "Jira", "Teams", "Slack", "MS Word"]
   }
 ]

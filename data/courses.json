@@ -7,17 +7,17 @@
     "summary": "In this course I gained deep insight into the internals of NodeJS - Libuv, V8, Event Loop Phases, Threads, Processes, OS communication, I/O operations.",
     "bullets": [
       "Event Loop Mechanics: Reviewed and learned the internal phases of the Node.js Event Loop (Initial, Timers, Pending, Poll, Check, Close) and microtask queues (process.nextTick, Promises). I saw examples and analyzed how blocking the main thread causes callback starvation and dropped server requests.",
-      "Asynchronous I/O & Libuv: Gained insight into Libuv. Di erentiated between non-blocking operations delegated directly to the OS (network I/O) and operations o loaded to the Libuv thread pool (File System, DNS lookups).",
-      "Worker Threads: Learned how to spot CPU intensive operations and how to use the worker threads module in order to o load CPU intensive operations to another thread and prevent blocking of the main one.",
-"Process Management: Evaluated the architectural tradeo s between scaling Child Processes (memory isolation, IPC) and Worker Threads (shared memory) for high-performance backend applications."
+      "Asynchronous I/O & Libuv: Gained insight into Libuv. Differentiated between non-blocking operations delegated directly to the OS (network I/O) and operations offloaded to the Libuv thread pool (File System, DNS lookups).",
+      "Worker Threads: Learned how to spot CPU intensive operations and how to use the worker threads module in order to offload CPU intensive operations to another thread and prevent blocking of the main one.",
+"Process Management: Evaluated the architectural tradeoffs between scaling Child Processes (memory isolation, IPC) and Worker Threads (shared memory) for high-performance backend applications."
     ],
     "tags": ["Node.js", "Asynchronous", "Event Loop", "Worker Threads", "Libuv", "V8", "OS Communication", "I/O Operations"]
   },
   {
     "title": "OOP Design Patterns",
-    "meta": "Nov 2025 - Dev 2025 · Jason Fedin",
+    "meta": "Nov 2025 - Dec 2025 · Jason Fedin",
     "org": "Udemy · Jason Fedin",
-    "date": "Nov 2025 - Dev 2025",
+    "date": "Nov 2025 - Dec 2025",
     "summary": "In this course I got to know what a Design Pattern is, why were they created and why are they used. I learned the main Design Principles which every developer and Design Pattern tries to follow, these principles are:\n\n 1. Programming To An Interface\n 2. Composition Over Inheritance\n 3. Delegation\n 4. Single Responsibility\n 5. Open Closed\n 6. Liskov Substitution\n 7. Interface Segregation\n 8. Dependency Inversion\n 9. Dependency Injection\n\n After the main principles I learned the 3 types of patterns - Creational, Structural and Behavioural.\n\n The Creational patterns I now know are: Factory Method, Abstract Factory Method, Singleton, Builder and Prototype.\n The Structural patterns I now know are: Adapter, Bridge, Composite, Decorator, Facade, Flyweight and Proxy.\n The Behavioural patterns I now know are: Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method and Visitor.",
     "bullets": [
     ],
@@ -28,7 +28,7 @@
     "meta": "Aug 2025 - Sept 2025 · Aaron Parecki",
     "org": "Udemy · Aaron Parecki",
     "date": "Aug 2025 - Sept 2025",
-    "summary": "In this course I learned the basics of OAuth 2.0 and OpenID Connect. How to implement an OAuth client from scratch. Best practices for developing OAuth 2.0 implementation to protect APIs. What JWT and Opaque tokens are, the di erent types of authorization flows for granting access and the di erent types of clients and communication channels involved in the process.",
+    "summary": "In this course I learned the basics of OAuth 2.0 and OpenID Connect. How to implement an OAuth client from scratch. Best practices for developing OAuth 2.0 implementation to protect APIs. What JWT and Opaque tokens are, the different types of authorization flows for granting access and the different types of clients and communication channels involved in the process.",
     "bullets": [
     ],
     "tags": ["OAuth 2.0", "Authorization Types", "OpenID Connect", "API Security", "JWT", "Opaque Tokens"]
@@ -38,7 +38,7 @@
     "meta": "Jun 2025 - Jul 2025 · Nate Ross",
     "org": "Udemy · Nate Ross",
     "date": "Jun 2025 - Jul 2025",
-    "summary": "In this high-level overview course I solidified the things I had already learned from my experience doing integrations. The course included Introduction to APIs and RESTful Web Services , What XML JSON, WSDL are, The di erence between REST and SOAP, The many types of apps( Native Web Hybrid ).",
+    "summary": "In this high-level overview course I solidified the things I had already learned from my experience doing integrations. The course included Introduction to APIs and RESTful Web Services , What XML JSON, WSDL are, The difference between REST and SOAP, The many types of apps( Native Web Hybrid ).",
     "bullets": [
     ],
     "tags": ["OAuth 2.0", "REST", "SOAP", "API Security", "JSON", "XML", "WSDL"]
@@ -78,7 +78,7 @@
     "meta": "Mar 2022 - May 2022 · Software University",
     "org": "Software University",
     "date": "Mar 2022 - May 2022",
-    "summary": "Credentials - https://so uni.bg/certificates/details/133157/968e759e \nThis course taught me the syntax of C++, what an array is and how to work with it. I learned to work with the basic data types (int, double, float, char, string), how to write functions, and use stringstream. The STL containers: vector & list were exhaustively explained, including when to use them and how to go through them using iterators.",
+    "summary": "Credentials - https://softuni.bg/certificates/details/133157/968e759e \nThis course taught me the syntax of C++, what an array is and how to work with it. I learned to work with the basic data types (int, double, float, char, string), how to write functions, and use stringstream. The STL containers: vector & list were exhaustively explained, including when to use them and how to go through them using iterators.",
     "bullets": [
     ],
     "tags": ["C++ Syntax", "Pointers", "Memory Management", "STL", "Object-Oriented Programming"]
@@ -88,7 +88,7 @@
     "meta": "May 2022 - Jun 2022 · Software University",
     "org": "Software University",
     "date": "May 2022 - Jun 2022",
-    "summary": "Credentials - https://so uni.bg/certificates/details/135482/59c9a899 \nIn this course, we were taught to work with the following containers: Stack, deque, map, set, queue, and Multidimensional Arrays. We were taught Pointers on how, why and when to use them.",
+    "summary": "Credentials - https://softuni.bg/certificates/details/135482/59c9a899 \nIn this course, we were taught to work with the following containers: Stack, deque, map, set, queue, and Multidimensional Arrays. We were taught Pointers on how, why and when to use them.",
     "bullets": [
     ],
     "tags": ["Stack", "Deque", "Map", "Set", "Queue", "Multidimensional Arrays", "Pointers"]
@@ -98,7 +98,7 @@
     "meta": "Jun 2022 - Sept 2022 · Software University",
     "org": "Software University",
     "date": "Jun 2022 - Sept 2022",
-    "summary": "Credentials - https://so uni.bg/certificates/details/142358/80ca5349 \n In this course, we learned about Classes and everything included in them (constructor, copy constructor, destructor, get methods, set methods, operator overloading for classes, polymorphism, inheritance, and abstract classes). The next step was getting to know Templates, enums, and bitwise operators.",
+    "summary": "Credentials - https://softuni.bg/certificates/details/142358/80ca5349 \n In this course, we learned about Classes and everything included in them (constructor, copy constructor, destructor, get methods, set methods, operator overloading for classes, polymorphism, inheritance, and abstract classes). The next step was getting to know Templates, enums, and bitwise operators.",
     "bullets": [
     ],
     "tags": ["Classes", "Constructors", "Copy Constructors", "Destructors", "Getters & Setters", "Operator Overloading", "Polymorphism", "Inheritance", "Abstract Classes", "Templates", "Enums", "Bitwise Operators"]
@@ -108,7 +108,7 @@
     "meta": "Jan 2023 - Feb 2023 · Software University",
     "org": "Software University",
     "date": "Jan 2023 - Feb 2023",
-    "summary": "Credentials - https://so uni.bg/certificates/details/157706/759199dc \nWe learned to work with one of the most used DBMS (Microso SQL Server). The course pays serious attention to the SQL language (CRUD operations, Selections, Table Relations, Joins, Grouping, Procedures, Triggers, Custom Functions writing, Views, Built in Functions, Transactions, and Data Aggregation ). It gave us a good basic working knowledge about Data Bases.",
+    "summary": "Credentials - https://softuni.bg/certificates/details/157706/759199dc \nWe learned to work with one of the most used DBMS (Microsoft SQL Server). The course pays serious attention to the SQL language (CRUD operations, Selections, Table Relations, Joins, Grouping, Procedures, Triggers, Custom Functions writing, Views, Built in Functions, Transactions, and Data Aggregation ). It gave us a good basic working knowledge about Data Bases.",
     "bullets": [
     ],
     "tags": ["SQL", "CRUD Operations", "Selections", "Table Relations", "Joins", "Grouping", "Procedures", "Triggers", "Custom Functions", "Views", "Built-in Functions", "Transactions", "Data Aggregation"]
