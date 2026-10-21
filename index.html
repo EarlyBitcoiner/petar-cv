@@ -24,6 +24,7 @@
 
     data/profile.json .......... your name, role, tagline, CTAs, social links
     data/personal.json ......... the About / Details / Interests tabs
+    data/certifications.json ... one object per certification (same shape as experience)
     data/experience.json ....... one object per job
     data/education.json ........ one object per school
     data/courses.json .......... one object per course (same shape as experience)
@@ -85,10 +86,11 @@
 
       <nav class="nav__links" id="navLinks" aria-label="Primary">
         <a href="#home" class="nav__link is-active">Home</a>
+        <a href="#certifications" class="nav__link">Certifications</a>
+        <a href="#skills" class="nav__link">Skills</a>
         <a href="#experience" class="nav__link">Experience</a>
         <a href="#education" class="nav__link">Education And Qualifications</a>
         <a href="#courses" class="nav__link">Courses</a>
-        <a href="#skills" class="nav__link">Skills</a>
         <a href="#projects" class="nav__link">Projects</a>
         <a href="#contact" class="nav__link">Contact</a>
       </nav>
@@ -128,6 +130,36 @@
       <div class="card glass">
         <div class="tabs" data-tabs data-section="personal">
           <div class="tablist" role="tablist" aria-label="Personal information"></div>
+          <div class="tabpanels"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CERTIFICATIONS ===================== -->
+    <section class="section" id="certifications">
+      <header class="section__head">
+        <p class="eyebrow">Credentials</p>
+        <h2 class="section__title">Certifications</h2>
+        <p class="section__sub">Salesforce certifications — one tab each.</p>
+      </header>
+      <div class="card glass">
+        <div class="tabs" data-tabs data-section="certifications">
+          <div class="tablist" role="tablist" aria-label="Certifications"></div>
+          <div class="tabpanels"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section" id="skills">
+      <header class="section__head">
+        <p class="eyebrow">Toolbox</p>
+        <h2 class="section__title">Skills</h2>
+        <p class="section__sub">Grouped by category — one tab each.</p>
+      </header>
+      <div class="card glass">
+        <div class="tabs" data-tabs data-section="skills">
+          <div class="tablist" role="tablist" aria-label="Skills by category"></div>
           <div class="tabpanels"></div>
         </div>
       </div>
@@ -173,21 +205,6 @@
       <div class="card glass">
         <div class="tabs" data-tabs data-section="courses">
           <div class="tablist" role="tablist" aria-label="Courses"></div>
-          <div class="tabpanels"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== SKILLS ===================== -->
-    <section class="section" id="skills">
-      <header class="section__head">
-        <p class="eyebrow">Toolbox</p>
-        <h2 class="section__title">Skills</h2>
-        <p class="section__sub">Grouped by category — one tab each.</p>
-      </header>
-      <div class="card glass">
-        <div class="tabs" data-tabs data-section="skills">
-          <div class="tablist" role="tablist" aria-label="Skills by category"></div>
           <div class="tabpanels"></div>
         </div>
       </div>

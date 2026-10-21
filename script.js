@@ -262,6 +262,7 @@
   // Declare every tabbed section once; render in a loop.
   var SECTIONS = [
     { key: 'personal',       label: textLabel,    panel: byTypePanel,   tag: 'div' },
+    { key: 'certifications', label: twoLineLabel, panel: entryPanel,    tag: 'article' },
     { key: 'experience',     label: twoLineLabel, panel: entryPanel,    tag: 'article' },
     { key: 'education',      label: twoLineLabel, panel: entryPanel,    tag: 'article' },
     { key: 'courses',        label: twoLineLabel, panel: entryPanel,    tag: 'article' },
@@ -370,7 +371,7 @@
      Data loading + boot
      ====================================================================== */
   function loadData() {
-    var names = ['profile', 'personal', 'experience', 'education', 'courses', 'skills', 'projects', 'contact'];
+    var names = ['profile', 'personal', 'certifications', 'experience', 'education', 'courses', 'skills', 'projects', 'contact'];
     return Promise.all(names.map(function (n) {
       return fetch('data/' + n + '.json').then(function (res) {
         if (!res.ok) throw new Error(n + '.json → HTTP ' + res.status);
