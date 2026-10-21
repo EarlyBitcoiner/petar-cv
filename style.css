@@ -334,18 +334,24 @@ ul { list-style: none; padding: 0; }
 .hero__tagline { color: var(--text-dim); margin: 16px auto 0; max-width: 560px; }
 .hero__cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
 
-.social { display: flex; gap: 12px; justify-content: center; margin-top: 26px; }
+.social { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 26px; }
 .social a {
-  display: grid; place-items: center;
-  width: 44px; height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  height: 44px;
+  padding: 0 16px;
   border-radius: 12px;
   background: rgba(255, 140, 26, 0.07);
   border: 1px solid var(--border);
   color: var(--text-dim);
+  font-weight: 600;
+  font-size: 0.9rem;
   transition: transform 0.18s, color 0.2s, background 0.2s, border-color 0.2s;
 }
 .social a:hover { color: var(--accent-3); background: rgba(255, 140, 26, 0.16); border-color: var(--border-strong); transform: translateY(-3px); }
-.social svg { width: 20px; height: 20px; fill: currentColor; }
+.social svg { width: 20px; height: 20px; fill: currentColor; flex: 0 0 auto; }
+.social__label { line-height: 1; white-space: nowrap; }
 .social--lg { justify-content: flex-start; margin-top: 22px; }
 
 /* ============================================================================
@@ -435,7 +441,8 @@ ul { list-style: none; padding: 0; }
   color: var(--text-faint);
 }
 .proj__meta .v { font-weight: 600; color: var(--text); }
-.proj__subhead {
+.proj__subhead,
+.entry__subhead {
   font-family: var(--font-head);
   font-size: 0.78rem;
   text-transform: uppercase;
@@ -443,6 +450,15 @@ ul { list-style: none; padding: 0; }
   color: var(--accent-3);
   margin: 22px 0 10px;
 }
+
+/* ----- References (optional block in experience/education/courses entries) ----- */
+.refs__list { display: grid; gap: 12px; }
+.refs__list li { display: grid; gap: 3px; padding-left: 14px; border-left: 2px solid var(--border-strong); }
+.refs__list strong { font-family: var(--font-head); }
+.refs__role { color: var(--text-dim); font-size: 0.9rem; }
+.refs__contact { color: var(--text-faint); font-size: 0.85rem; }
+.refs__contact a { color: var(--accent); }
+.refs__contact a:hover { color: var(--accent-3); }
 
 /* ----- Tags & chips ----- */
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }

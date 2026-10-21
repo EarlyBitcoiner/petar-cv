@@ -36,7 +36,9 @@
     linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.64h.05c.53-1 1.82-2.05 3.75-2.05C21.3 8.59 22 10.9 22 14v7h-4v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.6-2.38 3.27V21h-4V9Z"/></svg>',
     email: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1.4 2L12 12l7.6-5H4.4ZM20 8.2l-8 5.3-8-5.3V17h16V8.2Z"/></svg>',
     twitter: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.8l-5-6.6L5.4 22H2.3l8-9.2L2 2h6.9l4.6 6 5.4-6Zm-1.2 18h1.9L7.4 4H5.4l12.3 16Z"/></svg>',
-    website: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.9 6h-2.9a15.7 15.7 0 0 0-1.2-3.6A8 8 0 0 1 18.9 8ZM12 4.2c.8 1 1.5 2.4 1.9 3.8h-3.8c.4-1.4 1.1-2.8 1.9-3.8ZM4.3 14a8 8 0 0 1 0-4h3a17 17 0 0 0 0 4h-3Zm.8 2h2.9c.3 1.3.7 2.5 1.2 3.6A8 8 0 0 1 5.1 16Zm2.9-8H5.1a8 8 0 0 1 3.8-3.6A15.7 15.7 0 0 0 8 8Zm4 11.8c-.8-1-1.5-2.4-1.9-3.8h3.8c-.4 1.4-1.1 2.8-1.9 3.8Zm2.3-5.8H9.7a15 15 0 0 1 0-4h4.6a15 15 0 0 1 0 4Zm.7 5.4c.5-1.1.9-2.3 1.2-3.4h2.9a8 8 0 0 1-4.1 3.4ZM16.9 14a17 17 0 0 0 0-4h3a8 8 0 0 1 0 4h-3Z"/></svg>'
+    website: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.9 6h-2.9a15.7 15.7 0 0 0-1.2-3.6A8 8 0 0 1 18.9 8ZM12 4.2c.8 1 1.5 2.4 1.9 3.8h-3.8c.4-1.4 1.1-2.8 1.9-3.8ZM4.3 14a8 8 0 0 1 0-4h3a17 17 0 0 0 0 4h-3Zm.8 2h2.9c.3 1.3.7 2.5 1.2 3.6A8 8 0 0 1 5.1 16Zm2.9-8H5.1a8 8 0 0 1 3.8-3.6A15.7 15.7 0 0 0 8 8Zm4 11.8c-.8-1-1.5-2.4-1.9-3.8h3.8c-.4 1.4-1.1 2.8-1.9 3.8Zm2.3-5.8H9.7a15 15 0 0 1 0-4h4.6a15 15 0 0 1 0 4Zm.7 5.4c.5-1.1.9-2.3 1.2-3.4h2.9a8 8 0 0 1-4.1 3.4ZM16.9 14a17 17 0 0 0 0-4h3a8 8 0 0 1 0 4h-3Z"/></svg>',
+    // Salesforce cloud (used for a Trailblazer profile link). Source: Simple Icons (CC0).
+    trailblazer: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.006 5.415a4.195 4.195 0 013.045-1.306c1.56 0 2.954.9 3.69 2.205.63-.3 1.35-.45 2.1-.45 2.85 0 5.159 2.34 5.159 5.22s-2.31 5.22-5.176 5.22c-.345 0-.69-.044-1.02-.104a3.75 3.75 0 01-3.3 1.95c-.6 0-1.155-.15-1.65-.375A4.314 4.314 0 018.88 20.4a4.302 4.302 0 01-4.05-2.82c-.27.062-.54.076-.825.076-2.204 0-4.005-1.8-4.005-4.05 0-1.5.811-2.805 2.01-3.51-.255-.57-.39-1.2-.39-1.846 0-2.58 2.1-4.65 4.65-4.65 1.53 0 2.85.705 3.72 1.8"/></svg>'
   };
 
   /* ======================================================================
@@ -82,12 +84,19 @@
       return '<a href="' + esc(l.href) + '" target="_blank" rel="noopener">' + esc(l.label) + ' ↗</a>';
     }).join(' ') + '</p>';
   }
+  // Proper display names (fixes casing like "GitHub"/"LinkedIn"); shown as text next to each icon.
+  var SOCIAL_LABELS = {
+    github: 'GitHub', linkedin: 'LinkedIn', email: 'Email',
+    twitter: 'Twitter', website: 'Website', trailblazer: 'Trailblazer'
+  };
   function renderSocials(arr) {
     return (arr || []).map(function (s) {
       var icon = ICONS[s.network] || ICONS.website;
-      var label = s.network ? s.network.charAt(0).toUpperCase() + s.network.slice(1) : 'Link';
+      var label = SOCIAL_LABELS[s.network] ||
+        (s.network ? s.network.charAt(0).toUpperCase() + s.network.slice(1) : 'Link');
       var ext = s.network === 'email' ? '' : ' target="_blank" rel="noopener"';
-      return '<li><a href="' + esc(s.href) + '"' + ext + ' aria-label="' + esc(label) + '">' + icon + '</a></li>';
+      return '<li><a href="' + esc(s.href) + '"' + ext + '>' +
+        icon + '<span class="social__label">' + esc(label) + '</span></a></li>';
     }).join('');
   }
 
@@ -102,13 +111,31 @@
     return esc(item.label || item.title);
   }
 
-  // Experience & education share the same "entry" layout (bullets optional).
+  // References block (optional) — person name, title/relationship, and contact links.
+  function renderReferences(arr) {
+    if (!arr || !arr.length) return '';
+    return '<div class="refs"><h4 class="entry__subhead">References</h4><ul class="refs__list">' +
+      arr.map(function (r) {
+        var contacts = [];
+        if (r.email) contacts.push('<a href="mailto:' + esc(r.email) + '">' + esc(r.email) + '</a>');
+        if (r.phone) contacts.push('<a href="tel:' + esc(String(r.phone).replace(/\s+/g, '')) + '">' + esc(r.phone) + '</a>');
+        if (r.linkedin) contacts.push('<a href="' + esc(r.linkedin) + '" target="_blank" rel="noopener">LinkedIn</a>');
+        if (r.contact) contacts.push(esc(r.contact));
+        return '<li><strong>' + esc(r.name) + '</strong>' +
+          (r.title ? '<span class="refs__role">' + esc(r.title) + '</span>' : '') +
+          (contacts.length ? '<span class="refs__contact">' + contacts.join(' · ') + '</span>' : '') +
+          '</li>';
+      }).join('') + '</ul></div>';
+  }
+
+  // Experience & education share the same "entry" layout (bullets & references optional).
   function entryPanel(item) {
     return '<div class="entry__head"><h3>' + esc(item.title) + '</h3>' +
       (item.org ? '<p class="entry__org">' + esc(item.org) + '</p>' : '') +
       (item.date ? '<p class="entry__date">' + esc(item.date) + '</p>' : '') + '</div>' +
       (item.summary ? '<p>' + multiline(item.summary) + '</p>' : '') +
       renderBullets(item.bullets) +
+      renderReferences(item.references) +
       renderTags(item.tags);
   }
 

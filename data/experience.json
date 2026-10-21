@@ -4,13 +4,22 @@
     "meta": "Jun 2025 — Oct 2026",
     "org": "Softserve · (Remote)",
     "date": "Jun 2025 — Oct 2026",
-    "summary": "In SoftServe I was working in a project for a payment provider based in England, there I contribute to improving/customizing the quoting process for the company's clients where I leverage my knowledge in LWC, Salesforce CPQ, Apex, Flows and OmniScripts to create better UI experience and automations.\n\n Some of my time in SoftServe I was in a standby period awaiting client allocation. Instead of remaining passive, I proactively utilized the time to bridge the gap between Salesforce and core soware engineering. I focused on Design Patterns, OAuth, and deep understanding of Java/OOP principles to ensure I can build architecturally sound solutions, regardless of the platform.\n\n Reference to my Team Lead in SoftServe - Roman Slobodian: https://www.linkedin.com/in/rslob/ , +380 68 21 06 655 , rslob@softserveinc.com",
+    "summary": "In SoftServe I was working in a project for a payment provider based in England, there I contribute to improving/customizing the quoting process for the company's clients where I leverage my knowledge in LWC, Salesforce CPQ, Apex, Flows and OmniScripts to create better UI experience and automations.\n\n Some of my time in SoftServe I was in a standby period awaiting client allocation. Instead of remaining passive, I proactively utilized the time to bridge the gap between Salesforce and core soware engineering. I focused on Design Patterns, OAuth, and deep understanding of Java/OOP principles to ensure I can build architecturally sound solutions, regardless of the platform.",
     "bullets": [
       "Learned OOP design patterns.",
       "Customized Salesforce CPQ quoting process for clients leveraginf LWC, Apex, Flows and OmniScripts.",
       "Was part of a 30+ team of Salesforce developers and engineers, collaborating and sharing knowledge."
     ],
-    "tags": ["Salesforce", "CPQ", "Copado", "Apex", "JavaScript/LWC", "OmniScripts", "Flows", "Design Patterns", "VisualForce"]
+    "tags": ["Salesforce", "CPQ", "Copado", "Apex", "JavaScript/LWC", "OmniScripts", "Flows", "Design Patterns", "VisualForce"],
+    "references": [
+      {
+        "name": "Roman Slobodian",
+        "title": "Team Lead, SoftServe",
+        "email": "rslob@softserveinc.com",
+        "phone": "Phone number can be provided upon request",
+        "linkedin": "https://www.linkedin.com/in/rslob/"
+      }
+    ]
   },
   {
     "title": "Salesforce Developer - Next Consult",

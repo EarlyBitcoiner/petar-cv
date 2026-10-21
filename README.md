@@ -41,7 +41,7 @@ in the array and change its fields.** Save, then reload the page.
 |---|---|---|
 | `profile.json` | object | `name`, `role`, `roleAccent`, `tagline`, `status`, `ctas[]`{`label`,`href`,`style`:`primary`\|`ghost`,`download?`}, `socials[]`{`network`,`href`} |
 | `personal.json` | array of tabs | each `{label, type}` where `type` is `text` (`heading`,`body`), `facts` (`items[]`{`label`,`value`}), or `chips` (`items[]`) |
-| `experience.json` | array | `{title, meta, org, date, summary, bullets[], tags[]}` |
+| `experience.json` | array | `{title, meta, org, date, summary, bullets[], tags[], references?[]`{`name`,`title?`,`email?`,`phone?`,`linkedin?`,`contact?`}`}` — references render after the bullets, before the tags (also available on education/courses, same shape) |
 | `education.json` | array | `{title, meta, org, date, summary, tags[], bullets?[]}` |
 | `courses.json` | array | `{title, meta, org, date, summary, bullets[], tags[]}` (same shape as `experience.json`) |
 | `skills.json` | array of tabs | `{label, type}`: `meters` (`items[]`{`name`,`level` 0–100}) or `chips` (`items[]`) |
@@ -53,7 +53,8 @@ Notes:
   the personal **About** `body`, and bullet/responsibility strings — support line breaks. Put `\n`
   in the string where you want a new line, and `\n\n` for a blank line between paragraphs. (Short
   fields like titles, tags and chips are single-line by design.)
-- `network` for socials can be `github`, `linkedin`, `email`, `twitter`, or `website` (icon chosen automatically).
+- `network` for socials can be `github`, `linkedin`, `email`, `twitter`, `website`, or `trailblazer`
+  (Salesforce cloud icon, for a Trailblazer profile) — the icon is chosen automatically.
 - Keep the JSON valid — double quotes around keys/strings, commas between items, **no trailing comma**
   after the last item. If a section goes blank after an edit, that file likely has a JSON typo (check
   the browser console).
