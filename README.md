@@ -45,14 +45,14 @@ in the array and change its fields.** Save, then reload the page.
 | `education.json` | array | `{title, meta, org, date, summary, tags[], bullets?[]}` |
 | `courses.json` | array | `{title, meta, org, date, summary, bullets[], tags[]}` (same shape as `experience.json`) |
 | `skills.json` | array of tabs | `{label, type}`: `meters` (`items[]`{`name`,`level` 0–100}) or `chips` (`items[]`) |
-| `projects.json` | array | `{title, subtitle, summary, tags[], links[]`{`label`,`href`}`}` |
+| `projects.json` | array | `{title, duration, role, teamSize, summary, responsibilities[], tools[], links?[]`{`label`,`href`}`}` (any of duration/role/teamSize can be omitted) |
 | `contact.json` | object | `email`, `details[]`{`icon`,`value`,`href?`} (social icons come from `profile.json`) |
 
 Notes:
 - **Line breaks:** the prose fields — `summary` (experience, education, courses, projects),
-  the personal **About** `body`, and bullet strings — support line breaks. Put `\n` in the string
-  where you want a new line, and `\n\n` for a blank line between paragraphs. (Short fields like
-  titles, tags and chips are single-line by design.)
+  the personal **About** `body`, and bullet/responsibility strings — support line breaks. Put `\n`
+  in the string where you want a new line, and `\n\n` for a blank line between paragraphs. (Short
+  fields like titles, tags and chips are single-line by design.)
 - `network` for socials can be `github`, `linkedin`, `email`, `twitter`, or `website` (icon chosen automatically).
 - Keep the JSON valid — double quotes around keys/strings, commas between items, **no trailing comma**
   after the last item. If a section goes blank after an edit, that file likely has a JSON typo (check

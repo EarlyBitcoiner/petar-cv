@@ -1,32 +1,81 @@
 [
   {
-    "title": "Aurora Dashboard",
-    "subtitle": "Real-time analytics for product teams",
-    "summary": "A customizable dashboard that streams live metrics with sub-second updates and a drag-and-drop widget system.",
-    "tags": ["React", "WebSockets", "D3"],
+    "title": "Romanian E-Invoice Salesforce REST Integration",
+    "duration": "4 months",
+    "role": "Salesforce Developer",
+    "teamSize": "1 Developer , 1 Administrator",
+    "summary": "An Enterprise client operating in Romania wanted integration with the Romanian Government E-Invoice service to automatically send XML invoices from their Salesforce org at the end of the day to the client’s government account to achieve easier accounting. Before the integration their workflow was manual and time-consuming, requiring the client to log in to the government portal and manually upload the XML invoices. The integration was built using Salesforce Apex and REST API to send the XML invoices directly from Salesforce to the government service, streamlining the process and saving time for the client.",
+    "responsibilities": [
+      "Collecting and analyzing the E-Invoice API documentation. Creating a plan and separating it into many tickets.",
+      "Developing Apex classes to make the API calls to the E-Invoice service and handle the responses.",
+      "Developing the backend logic to handle the XML invoice generation and submission.",
+      "Developing a ZIP file parser to handle the API responses from the E-Invoice service.",
+      "Creating custom fields on the Invoice object to store the E-Invoice service responses and status."
+    ],
+    "tools": ["Salesforce", "Apex", "Schedulable Apex", "Queueable Apex", "REST API", "Custom Metadata Types", "CPQ", "Git", "GitHub", "GearSet DevOps"],
     "links": [
-      { "label": "Live demo", "href": "#" },
-      { "label": "Source", "href": "#" }
     ]
   },
   {
-    "title": "PocketLedger",
-    "subtitle": "Privacy-first personal finance app",
-    "summary": "An offline-first budgeting app with local encryption and clean data-viz. Over 2k installs in its first month.",
-    "tags": ["React Native", "SQLite", "Charts"],
+    "title": "AgentForce Custom Sales Support Employee Agent",
+    "duration": "3 months",
+    "role": "Salesforce Developer",
+    "teamSize": "4 Developers",
+    "summary": "Client wanted AI integrated into their Salesforce org to help their sales team in their daily work. The aim was for AI to execute sales tasks by simple prompting in plain everyday English. AI agent was created working in the user context for search operations on accounts, opportunities, quotes and products. The AI agent was able to do the following operations based on user prompt:\n\n 1. Search for accounts, opportunities and quotes.\n 2. Search for products and create quotes with the products found and selected in the prompt.\n 3. Check for pending approvals and approve or reject them.\n\n None of these operations required any coding knowledge from the user, they were all executed by simple prompting in plain everyday English and no operation was executed without the user explicitly prompting for it, for example the AI agent would never approve or reject an approval without the user explicitly prompting for it, nor creating opportunities or quotes. The AI always executed the operations in the user context as if the user was executing them themselves, so the AI agent never had any elevated permissions and could only do what the user could do.\n\n In the end we achieved AI agent which helps sales team do their work faster and more efficiently.",
+    "responsibilities": [
+      "Writing AI agent usable Apex invocable methods.",
+      "Writing instructions for the agent on how to handle user interactions, setting boundaries on behavior and ethics.",
+      "Writing AI agent instructions for each operation such as creating a quote. These instructions were for one of the following:\n\n - When the operation should be executed.\n - What data should be collected from the user before executing the operation and how to ask for the data. \n - How should the response data be formatted and presented to the user.\n - What should be done if the operation fails or if the user input is invalid.\n - What other operations should be executed before or after the operation.",
+      "Taking active part in testing and designing the AI agent."
+    ],
+    "tools": ["Salesforce", "Agentforce", "AI Agents", "Apex", "Revenue Cloud", "Lucidchart", "Git", "GitHub", "GearSet DevOps" ],
     "links": [
-      { "label": "Live demo", "href": "#" },
-      { "label": "Source", "href": "#" }
     ]
   },
   {
-    "title": "Trailmark",
-    "subtitle": "Community trail-mapping platform",
-    "summary": "Crowd-sourced hiking routes with GPX import, elevation profiles and offline maps for the backcountry.",
-    "tags": ["Next.js", "Mapbox", "PostGIS"],
+    "title": "Shipment management UI component",
+    "duration": "4 months",
+    "role": "Salesforce Developer",
+    "teamSize": "2 Developers , 2 Administrators",
+    "summary": "Client had their shipment and warehouse management processes handled internally in Salesforce. They wanted to improve their order fulfillment process by creating more user-friendly, intuitive and efficient process. It was decided custom LWC components and custom Apex processes had to be built. \n\n Their old process for order fulfillment was very clumsy and slow, requiring many clicks and page reloads. The process was - warehouse employee receives notification about order, they open the order and check every single product in the order, then they check the stock for each product and if the stock is available they create a shipment for the product, if not they create a backorder for the product. After all products are checked and shipment/backorder created, they have to go to the shipment object and check if all shipments are created and if yes, they have to click a button to mark the order as ready to be shipped. \n\n The new process was designed to be more user-friendly and efficient. The warehouse employee receives notification about order, and through the notification they open our custom LWC component having everything in place like products in the order, availability of the products, tracking of which products are already added to the order shipment and which are not, and a button to mark the order as ready to be shipped, which automatically start the shipment process for the other employees.",
+    "responsibilities": [
+      "Developing Apex classes to handle all the backend logic behind the scenes.",
+      "Developing custom LWC for phone usability.",
+      "Closely collaborating with the administrator to understand the business process, all sobjects around it and design the new process."
+    ],
+    "tools": ["CPQ", "Salesforce", "Apex", "LWC", "Flows", "Git", "GitHub", "GearSet DevOps"],
+    "links": []
+  },{
+    "title": "Experian API SOAP Integration for Salesforce",
+    "duration": "1 month",
+    "role": "Salesforce Developer",
+    "teamSize": "2 Developers",
+    "summary": "Client needed the Experian Bank Wizard SOAP API integrated with Salesforce to be able to do bank verification on its users. In this project I was playing a support role to a more senior developer, helping him with integrating the API endpoints and testing the integration. \n\n This was my first time touching SOAP based APIs, it was short but really valuable project for me because here I learned to work with XML files, how to create Apex XML parsers and how to do SOAP integrations.",
+    "responsibilities": [
+      "Helping with the integration of the Experian SOAP API endpoints into Salesforce.",
+      "Helping in creating Salesforce sObject to XML file parser.",
+      "Helping with testing the integration and making sure it works as expected.",
+      "Mapping sObject fields to XML structures."
+    ],
+    "tools": ["Postman", "Apex", "SOAP UI", "SOAP", "Git", "GitHub", "GearSet DevOps"],
     "links": [
-      { "label": "Live demo", "href": "#" },
-      { "label": "Source", "href": "#" }
+    ]
+  },
+  {
+    "title": "Customizations Maintenance and Enhancement",
+    "duration": "7 months",
+    "role": "Salesforce Developer",
+    "teamSize": "+30 Salesforce professionals (Developers, Administrators, QAs, PMs, CPQ Specialists, Salesforce Architects)",
+    "summary": "Enterprise Client, part of a huge and serious team developing and maintaining many different things simultaneously. I did a lot of enhancements for Revenue Cloud/CPQ processes like Flows, Apex Classes, LWCs, Visualforce pages and something completely new for me at the time OmniScripts and Omni Flex Cards which was basically LWCs framework. Here I got valuable experience in Copado DevOps operations.",
+    "responsibilities": [
+      "Enhancing already working Flows, LWCs, Apex classes and OmniScript to cover new client requirements and new desired look.",
+      "Aligning old customizations in work without problem with newly released ones.",
+      "Updating and maintaining documentation on changes I have done on customizations.",
+      "Doing code reviews.",
+      "Actively participating in discussions by giving my technical point of view opinion."
+    ],
+    "tools": ["Flows", "Apex", "OmniScripts", "Omni Flex Cards", "Sales Cloud", "CPQ/Revenue Cloud", "Copado", "Jira", "Git", "GitHub", "Lucidchart", "Slack"],
+    "links": [
     ]
   }
 ]

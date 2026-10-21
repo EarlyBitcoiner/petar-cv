@@ -218,7 +218,7 @@ ul { list-style: none; padding: 0; }
 .section {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: clamp(56px, 9vw, 110px) 20px;
+  padding: clamp(19px, 3vw, 37px) 20px;
 }
 .section__head { text-align: center; max-width: 620px; margin: 0 auto clamp(28px, 4vw, 40px); }
 .section__title {
@@ -413,6 +413,37 @@ ul { list-style: none; padding: 0; }
 }
 .links { margin-top: 16px; display: flex; gap: 18px; font-weight: 600; }
 
+/* ----- Project panels (structured fields) ----- */
+.proj__meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 16px 0 4px;
+}
+.proj__meta li {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 140, 26, 0.06);
+  border: 1px solid var(--border);
+}
+.proj__meta .k {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-faint);
+}
+.proj__meta .v { font-weight: 600; color: var(--text); }
+.proj__subhead {
+  font-family: var(--font-head);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-3);
+  margin: 22px 0 10px;
+}
+
 /* ----- Tags & chips ----- */
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .tag {
@@ -462,7 +493,8 @@ ul { list-style: none; padding: 0; }
 /* ============================================================================
    Contact
    ============================================================================ */
-.contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+.contact__grid { display: grid; justify-content: center; gap: 20px; }
+.contact__grid > .card { width: min(560px, 100%); }
 .contact__list { display: grid; gap: 16px; margin-bottom: 6px; }
 .contact__list li { display: flex; align-items: center; gap: 14px; }
 .contact__ico {
@@ -473,28 +505,6 @@ ul { list-style: none; padding: 0; }
   border: 1px solid var(--border);
   color: var(--accent-3);
 }
-
-.contact__form { display: grid; gap: 14px; }
-.field { display: grid; gap: 6px; }
-.field label { font-size: 0.85rem; color: var(--text-dim); font-weight: 500; }
-.field input, .field textarea {
-  width: 100%;
-  padding: 12px 14px;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  color: var(--text);
-  font: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-.field input::placeholder, .field textarea::placeholder { color: var(--text-faint); }
-.field input:focus, .field textarea:focus {
-  outline: none;
-  border-color: var(--border-strong);
-  box-shadow: 0 0 0 3px rgba(255, 140, 26, 0.14);
-}
-.field textarea { resize: vertical; }
-.form__note { font-size: 0.8rem; color: var(--text-faint); }
 
 /* ============================================================================
    Footer
@@ -536,7 +546,6 @@ ul { list-style: none; padding: 0; }
   }
   .nav__links.open { opacity: 1; visibility: visible; transform: translateY(0); }
   .nav__link { padding: 12px; }
-  .contact__grid { grid-template-columns: 1fr; }
   .facts strong { text-align: left; }
 }
 

@@ -113,10 +113,27 @@
   }
 
   function projectsPanel(item) {
+    // Labeled "stat" grid — only the fields that are filled in show up.
+    var meta = [
+      ['Duration', item.duration],
+      ['Role', item.role],
+      ['Team size', item.teamSize]
+    ].filter(function (p) { return p[1] != null && p[1] !== ''; });
+    var metaHtml = meta.length
+      ? '<ul class="proj__meta">' + meta.map(function (p) {
+          return '<li><span class="k">' + esc(p[0]) + '</span><span class="v">' + esc(p[1]) + '</span></li>';
+        }).join('') + '</ul>'
+      : '';
+
     return '<h3>' + esc(item.title) + '</h3>' +
-      (item.subtitle ? '<p class="entry__org">' + esc(item.subtitle) + '</p>' : '') +
+      metaHtml +
       (item.summary ? '<p>' + multiline(item.summary) + '</p>' : '') +
-      renderTags(item.tags) +
+      (item.responsibilities && item.responsibilities.length
+        ? '<h4 class="proj__subhead">Main responsibilities</h4>' + renderBullets(item.responsibilities)
+        : '') +
+      (item.tools && item.tools.length
+        ? '<h4 class="proj__subhead">Tools &amp; technologies</h4>' + renderTags(item.tools)
+        : '') +
       renderLinks(item.links);
   }
 
@@ -268,25 +285,6 @@
     }
     var soc = document.getElementById('contactSocial');
     if (soc) soc.innerHTML = renderSocials(socials);
-  }
-
-  function initContactForm(email) {
-    var form = document.getElementById('contactForm');
-    var note = document.getElementById('formNote');
-    if (!form) return;
-    var TO = email || 'petar.danadzhiev.bg@gmail.com';
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      var data = new FormData(form);
-      var name = (data.get('name') || '').toString().trim();
-      var mail = (data.get('email') || '').toString().trim();
-      var msg = (data.get('message') || '').toString().trim();
-      var subject = encodeURIComponent('Portfolio message from ' + name);
-      var body = encodeURIComponent(msg + '\n\n— ' + name + ' (' + mail + ')');
-      window.location.href = 'mailto:' + TO + '?subject=' + subject + '&body=' + body;
-      if (note) note.textContent = 'Opening your email app…';
-    });
   }
 
   function animateVisibleMeters() {
@@ -464,7 +462,6 @@
       });
 
       renderContact(data.contact, data.profile && data.profile.socials);
-      initContactForm(data.contact && data.contact.email);
       animateVisibleMeters();
     }).catch(showLoadError);
   }
