@@ -44,35 +44,79 @@
 <body>
   <a class="skip-link" href="#home">Skip to content</a>
 
-  <!-- Static topographic contour lines (decorative, non-interactive) -->
+  <!-- Decorative background: dot grid + meandering map-river lines (non-interactive) -->
   <div class="bg-topo" aria-hidden="true">
     <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
       <defs>
-        <path id="ring" vector-effect="non-scaling-stroke"
-          d="M0,-52 C28,-54 54,-30 52,2 C50,34 26,56 -6,54 C-38,52 -58,26 -54,-8 C-50,-38 -28,-50 0,-52 Z"/>
+        <!-- a dot only where grid lines would cross -->
+        <pattern id="dots" width="38" height="38" patternUnits="userSpaceOnUse">
+          <circle class="dot" cx="0" cy="0" r="1.8"/>
+        </pattern>
+        <!-- one strongly-meandering river line; drawn several times side by side -->
+        <path id="riverpath"
+          d="M 720 -60
+             C 720 35, 600 35, 600 130
+             C 600 225, 840 225, 840 320
+             C 840 415, 600 415, 600 510
+             C 600 605, 840 605, 840 700
+             C 840 795, 600 795, 600 890
+             C 600 985, 840 985, 840 1080
+             C 840 1175, 720 1175, 720 1270"/>
+        <!-- soft glow used for the pulse of light -->
+        <radialGradient id="sparkGlow">
+          <stop offset="0%"   stop-color="#fff1d8" stop-opacity="0.95"/>
+          <stop offset="45%"  stop-color="#f3a654" stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="#f3a654" stop-opacity="0"/>
+        </radialGradient>
       </defs>
-      <!-- peak A (top-left) -->
-      <use href="#ring" transform="translate(300 250) scale(0.6)"/>
-      <use href="#ring" transform="translate(300 250) scale(1.0)"/>
-      <use href="#ring" transform="translate(300 250) scale(1.45)"/>
-      <use href="#ring" transform="translate(300 250) scale(1.9)"/>
-      <use href="#ring" transform="translate(300 250) scale(2.4)"/>
-      <use href="#ring" transform="translate(300 250) scale(2.9)"/>
-      <use href="#ring" transform="translate(300 250) scale(3.4)"/>
-      <!-- peak B (right) -->
-      <use href="#ring" transform="translate(1160 600) scale(0.7)"/>
-      <use href="#ring" transform="translate(1160 600) scale(1.15)"/>
-      <use href="#ring" transform="translate(1160 600) scale(1.6)"/>
-      <use href="#ring" transform="translate(1160 600) scale(2.1)"/>
-      <use href="#ring" transform="translate(1160 600) scale(2.6)"/>
-      <use href="#ring" transform="translate(1160 600) scale(3.1)"/>
-      <use href="#ring" transform="translate(1160 600) scale(3.6)"/>
-      <!-- peak C (bottom center) -->
-      <use href="#ring" transform="translate(720 880) scale(1.0)"/>
-      <use href="#ring" transform="translate(720 880) scale(1.6)"/>
-      <use href="#ring" transform="translate(720 880) scale(2.2)"/>
-      <use href="#ring" transform="translate(720 880) scale(2.8)"/>
-      <use href="#ring" transform="translate(720 880) scale(3.4)"/>
+
+      <!-- the grid, as dots only -->
+      <rect x="0" y="0" width="1440" height="900" fill="url(#dots)"/>
+
+      <!-- the river: parallel solid lines form the channel; a glow pulses down each one.
+           Each line is offset sideways; the whole group drifts via CSS (see .river-group). -->
+      <g class="river-group">
+        <g transform="translate(-24 0)">
+          <use class="river" href="#riverpath"/>
+          <ellipse class="spark" rx="26" ry="4.5" fill="url(#sparkGlow)">
+            <animateMotion dur="15s" begin="0s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#riverpath"/>
+            </animateMotion>
+          </ellipse>
+        </g>
+        <g transform="translate(-12 0)">
+          <use class="river" href="#riverpath"/>
+          <ellipse class="spark" rx="26" ry="4.5" fill="url(#sparkGlow)">
+            <animateMotion dur="15s" begin="-3s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#riverpath"/>
+            </animateMotion>
+          </ellipse>
+        </g>
+        <g transform="translate(0 0)">
+          <use class="river" href="#riverpath"/>
+          <ellipse class="spark" rx="26" ry="4.5" fill="url(#sparkGlow)">
+            <animateMotion dur="15s" begin="-6s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#riverpath"/>
+            </animateMotion>
+          </ellipse>
+        </g>
+        <g transform="translate(12 0)">
+          <use class="river" href="#riverpath"/>
+          <ellipse class="spark" rx="26" ry="4.5" fill="url(#sparkGlow)">
+            <animateMotion dur="15s" begin="-9s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#riverpath"/>
+            </animateMotion>
+          </ellipse>
+        </g>
+        <g transform="translate(24 0)">
+          <use class="river" href="#riverpath"/>
+          <ellipse class="spark" rx="26" ry="4.5" fill="url(#sparkGlow)">
+            <animateMotion dur="15s" begin="-12s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#riverpath"/>
+            </animateMotion>
+          </ellipse>
+        </g>
+      </g>
     </svg>
   </div>
 

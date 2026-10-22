@@ -109,7 +109,7 @@ ul { list-style: none; padding: 0; }
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.22;
+  opacity: 0.9; /* brighter; per-element opacities below do the fine-tuning */
   -webkit-mask-image: radial-gradient(135% 110% at 50% 0%, #000 38%, transparent 82%);
           mask-image: radial-gradient(135% 110% at 50% 0%, #000 38%, transparent 82%);
 }
@@ -117,9 +117,37 @@ ul { list-style: none; padding: 0; }
   width: 100%;
   height: 100%;
   display: block;
+}
+/* dots sit only where grid lines would cross */
+.bg-topo .dot {
+  fill: #e4873c;        /* lighter orange so the small dots read on the dark bg */
+  fill-opacity: 0.55;
+  stroke: none;
+}
+/* river: parallel SOLID lines sharing one strong meander */
+.bg-topo .river {
   fill: none;
   stroke: var(--accent);
-  stroke-width: 1.2;
+  stroke-opacity: 0.6;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* the pulse of light that travels down each line (blended so it reads as light) */
+.bg-topo .spark { mix-blend-mode: screen; }
+/* the whole channel drifts gently left <-> right, like a river.
+   One composited transform animation on the group — no per-frame repaint. */
+.bg-topo .river-group {
+  animation: riversway 13s ease-in-out infinite;
+}
+@keyframes riversway {
+  0%, 100% { transform: translateX(-12px); }
+  50%      { transform: translateX(12px); }
+}
+/* honour reduced-motion: stop the drift and remove the moving light */
+@media (prefers-reduced-motion: reduce) {
+  .bg-topo .river-group { animation: none; }
+  .bg-topo .spark { display: none; }
 }
 
 /* ============================================================================
@@ -372,7 +400,7 @@ ul { list-style: none; padding: 0; }
 .tab__title { line-height: 1.2; }
 .tab__meta { font-size: 0.72rem; font-weight: 500; color: var(--accent-3); opacity: 0.85; }
 
-.tabpanel { animation: fadeIn 0.4s ease; }
+.tabpanel { animation: fadeIn 0.4s ease; overflow-wrap: anywhere; }
 .tabpanel[hidden] { display: none; }
 .tabpanel h3 { font-family: var(--font-head); font-size: 1.3rem; margin-bottom: 6px; }
 .tabpanel p { color: var(--text-dim); }
