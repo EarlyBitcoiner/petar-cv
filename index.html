@@ -12,7 +12,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=flicker-test" />
+
+  <!-- TEMP flicker test: ?test=nospark,noblur ... adds t-nospark t-noblur to <html> before first paint. Remove after testing. -->
+  <script>
+    (function () {
+      var m = location.search.match(/[?&]test=([^&]+)/);
+      if (!m) return;
+      document.documentElement.className += ' ' + decodeURIComponent(m[1]).split(',').map(function (t) {
+        return 't-' + t.trim();
+      }).join(' ');
+    })();
+  </script>
 </head>
 
 <!--

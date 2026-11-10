@@ -568,6 +568,18 @@ ul { list-style: none; padding: 0; }
 }
 
 /* ============================================================================
+   TEMP flicker test switches (set by ?test=... in index.html). Remove after testing.
+   ============================================================================ */
+.t-nobg .bg-topo { display: none; }
+.t-nospark .bg-topo .spark { display: none; }
+.t-nosway .bg-topo .river-group { animation: none; }
+.t-nomask .bg-topo { -webkit-mask-image: none; mask-image: none; }
+.t-noblur .nav,
+.t-noblur .nav__links { -webkit-backdrop-filter: none; backdrop-filter: none; }
+.t-nofade .tabpanel { animation: none; }
+.t-noimg .hero__avatar img { display: none; }
+
+/* ============================================================================
    Reduced motion — disable heavy animation, keep everything usable
    ============================================================================ */
 @media (prefers-reduced-motion: reduce) {
