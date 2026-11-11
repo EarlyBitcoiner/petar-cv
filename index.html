@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=flicker-test" />
+  <link rel="stylesheet" href="style.css?v=flicker-fix" />
 
   <!-- TEMP flicker test: ?test=nospark,noblur ... adds t-nospark t-noblur to <html> before first paint. Remove after testing. -->
   <script>
@@ -55,7 +55,9 @@
 <body>
   <a class="skip-link" href="#home">Skip to content</a>
 
-  <!-- Decorative background: dot grid + meandering map-river lines (non-interactive) -->
+  <!-- Decorative background: dot grid + meandering map-river lines (non-interactive).
+       Two stacked SVGs with the same viewBox: the dots stay still, and the river sits in
+       its own .bg-river div so its drift is a GPU-composited transform (no per-frame repaint). -->
   <div class="bg-topo" aria-hidden="true">
     <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
       <defs>
@@ -63,6 +65,15 @@
         <pattern id="dots" width="38" height="38" patternUnits="userSpaceOnUse">
           <circle class="dot" cx="0" cy="0" r="1.8"/>
         </pattern>
+      </defs>
+
+      <!-- the grid, as dots only -->
+      <rect x="0" y="0" width="1440" height="900" fill="url(#dots)"/>
+    </svg>
+
+    <div class="bg-river">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
         <!-- one strongly-meandering river line; drawn several times side by side -->
         <path id="riverpath"
           d="M 720 -60
@@ -81,11 +92,8 @@
         </radialGradient>
       </defs>
 
-      <!-- the grid, as dots only -->
-      <rect x="0" y="0" width="1440" height="900" fill="url(#dots)"/>
-
       <!-- the river: parallel solid lines form the channel; a glow pulses down each one.
-           Each line is offset sideways; the whole group drifts via CSS (see .river-group). -->
+           Each line is offset sideways; the whole layer drifts via CSS (see .bg-river). -->
       <g class="river-group">
         <g transform="translate(-24 0)">
           <use class="river" href="#riverpath"/>
@@ -129,6 +137,7 @@
         </g>
       </g>
     </svg>
+    </div>
   </div>
 
   <!-- ===================== NAV ===================== -->
@@ -168,7 +177,7 @@
     <section class="section hero" id="home">
       <div class="hero__intro">
         <div class="hero__avatar">
-          <img src="assets/ME_onBoat.jpg" alt="Portrait of Petar Danadzhiev" width="140" height="140" />
+          <img src="assets/ME_onBoat_avatar.jpg" alt="Portrait of Petar Danadzhiev" width="140" height="140" />
           <span class="hero__status" title="Open to opportunities"></span>
         </div>
 

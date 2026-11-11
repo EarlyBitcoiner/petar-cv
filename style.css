@@ -136,8 +136,15 @@ ul { list-style: none; padding: 0; }
 /* the pulse of light that travels down each line (blended so it reads as light) */
 .bg-topo .spark { mix-blend-mode: screen; }
 /* the whole channel drifts gently left <-> right, like a river.
-   One composited transform animation on the group — no per-frame repaint. */
-.bg-topo .river-group {
+   The drift lives on this HTML wrapper, not on the SVG <g>: browsers only
+   GPU-composite transform animations on HTML elements. On an SVG child the
+   whole river was re-rasterized every frame, which (together with the sparks
+   and the photo decode) overloaded mobile Chrome's raster threads at startup
+   and caused ~2s of flicker on phones. */
+.bg-topo .bg-river {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
   animation: riversway 13s ease-in-out infinite;
 }
 @keyframes riversway {
@@ -146,7 +153,7 @@ ul { list-style: none; padding: 0; }
 }
 /* honour reduced-motion: stop the drift and remove the moving light */
 @media (prefers-reduced-motion: reduce) {
-  .bg-topo .river-group { animation: none; }
+  .bg-topo .bg-river { animation: none; }
   .bg-topo .spark { display: none; }
 }
 
@@ -572,7 +579,7 @@ ul { list-style: none; padding: 0; }
    ============================================================================ */
 .t-nobg .bg-topo { display: none; }
 .t-nospark .bg-topo .spark { display: none; }
-.t-nosway .bg-topo .river-group { animation: none; }
+.t-nosway .bg-topo .bg-river { animation: none; }
 .t-nomask .bg-topo { -webkit-mask-image: none; mask-image: none; }
 .t-noblur .nav,
 .t-noblur .nav__links { -webkit-backdrop-filter: none; backdrop-filter: none; }
